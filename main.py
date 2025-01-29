@@ -17,5 +17,5 @@ async def read_root():
     return {
         "email": "sobowalegz2@gmail.com",
         "current_datetime": datetime.now().isoformat(),
-        "github_url": "<https://github.com/Matutozi/HNG-week1>"
+        "github_url": "https://github.com/Matutozi/HNG-week1"
     }
