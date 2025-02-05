@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import httpx
 
-app = FastAPI()
+app1 = FastAPI()
 
 def is_prime(n):
     """method that checks if n is prime"""
@@ -40,7 +40,7 @@ def get_fun_facts(n):
     else:
         return "No fun fact Available"
 
-@app.get("/api/classify-number")
+@app1.get("/api/classify-number")
 def classify_number(number : str):
     try:
         num = int(number)
