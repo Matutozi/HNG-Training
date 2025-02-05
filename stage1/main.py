@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import httpx
 from fastapi.middleware.cors import CORSMiddleware
-
+from fastapi.responses import JSONResponse
 app = FastAPI()
 
 app.add_middleware(
@@ -57,11 +57,16 @@ def get_fun_facts(n):
 def classify_number(number : str):
     try:
         num = int(number)
+        if num < 0:
+            raise ValueError("The number must be non negative")
     except ValueError:
-        return {
+        return JSONResponse (
+            status_code = 400,
+            content ={
             "number": number,
             "error": True
-        }
+            }
+        )
 
     properties = []
 
