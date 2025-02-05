@@ -33,9 +33,13 @@ def is_perfect(n):
 
 def is_armstrong(n):
     """Method to check if a number is amstrong"""
-    digits = [int(d) for d in str(n)]
+
+    if n < 0:
+        return False
+    
+    digits = [int(d) for d in str(abs(n))]
     power = len(digits)
-    return sum(d ** power for d in digits) == n #return boolean value
+    return sum(d ** power for d in digits) == abs(n) #return boolean value
 
 def digit_sum(n):
     """Return the sum of the digits of a number."""
