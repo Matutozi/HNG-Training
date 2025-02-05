@@ -43,7 +43,7 @@ def is_armstrong(n):
 
 def digit_sum(n):
     """Return the sum of the digits of a number."""
-    return sum(int(digit) for digit in str(n))
+    return sum(int(digit) for digit in str(abs(n)))
 
 def get_fun_facts(n):
     """method that reads an api based on the value n and returns a response"""
@@ -57,8 +57,6 @@ def get_fun_facts(n):
 def classify_number(number : str):
     try:
         num = int(number)
-        if num < 0:
-            raise ValueError("The number must be non negative")
     except ValueError:
         return JSONResponse (
             status_code = 400,
